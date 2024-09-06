@@ -18,14 +18,14 @@
 	"title": "Tổng Quan Workshop",
 	"tags": [],
 	"description": "",
-	"content": "Mục Tiêu: Sau workshop này, bạn sẽ có khả năng:\nTạo hạ tầng sử dụng Serverless Framework Triển khai các hàm Lambda Tạo một pipeline CI/CD sử dụng CodePipeline, CodeBuild, và CodeDeploy Sources: FE: [fcj-ws-fe](https://github.com/dinhhung1598753/fcj-ws-fe)\rBE: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)\rThời Gian: Workshop này sẽ mất 2 giờ để hoàn thành.\nKiến Trúc: "
+	"content": "Mục Tiêu: Sau workshop này, bạn sẽ có khả năng:\nTạo hạ tầng sử dụng Serverless Framework Triển khai các hàm Lambda Tạo một pipeline CI/CD sử dụng CodePipeline, CodeBuild, và CodeDeploy Sources: FE: fcj-ws-fe\nBE: fcj-ws-api\nThời Gian: Workshop này sẽ mất 2 giờ để hoàn thành.\nKiến Trúc: "
 },
 {
 	"uri": "//localhost:1313/vi/2-tasklist/",
-	"title": "Các bước chuẩn bị",
+	"title": "Danh sách công việc",
 	"tags": [],
 	"description": "",
-	"content": "\rBạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.\nĐể tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :\nGiới thiệu về Amazon EC2 Làm việc với Amazon VPC Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.\nNội dung Chuẩn bị VPC và EC2 Instance Tạo IAM Role "
+	"content": "Danh sách công việc sẽ được thực hiện: Tạo IAM user cho Serverless Framework Tạo trang web tĩnh S3 và CloudFront Tạo tài nguyên cho backend (Lambda, API Gateway, Cognito, DynamoDB) Tạo pipeline CI/CD cho Frontend "
 },
 {
 	"uri": "//localhost:1313/vi/2-tasklist/2.2-createfeinfrastructure/",

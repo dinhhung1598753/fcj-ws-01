@@ -18,7 +18,7 @@
 	"title": "Workshop Overview",
 	"tags": [],
 	"description": "",
-	"content": "Objectives: After this workshop, you will be able to:\nCreate resources using the Serverless Framework Deploy Lambda functions Create a CI/CD pipeline using CodePipeline, CodeBuild, and CodeDeploy Repositories: FE: [fcj-ws-fe](https://github.com/dinhhung1598753/fcj-ws-fe)\rBE: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)\rDuration: This workshop will take 2 hours to complete.\nArchitecture: "
+	"content": "Objectives: After this workshop, you will be able to:\nCreate resources using the Serverless Framework Deploy Lambda functions Create a CI/CD pipeline using CodePipeline, CodeBuild, and CodeDeploy Repositories: FE: fcj-ws-fe\nBE: fcj-ws-api\nDuration: This workshop will take 2 hours to complete.\nArchitecture: "
 },
 {
 	"uri": "//localhost:1313/2-tasklist/2.2-createfeinfrastructure/",
@@ -29,10 +29,10 @@
 },
 {
 	"uri": "//localhost:1313/2-tasklist/",
-	"title": "Danh sách công việc",
+	"title": "Task List",
 	"tags": [],
 	"description": "",
-	"content": "Danh sách công việc sẽ được thực hiện: Tạo IAM user cho Serverless Framework Tạo trang web tĩnh S3 và CloudFront Tạo tài nguyên cho backend (Lambda, API Gateway, Cognito, DynamoDB) Tạo pipeline CI/CD cho Frontend "
+	"content": "List task will be performed: Create IAM user for Serverless Framework Create S3 static web and CloudFront Create infrastructure for backend (Lambda, API Gateway, Cognito, DynamoDB) Create CI/CD pipeline for Frontend "
 },
 {
 	"uri": "//localhost:1313/3-conclusion/",
