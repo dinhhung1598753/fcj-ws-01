@@ -1,26 +1,26 @@
 ---
-title: "Create resource and lambda functions for backend"
+title: "Tạo tài nguyên cho backend "
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: " <b> 2.3 </b> "
 ---
 
-## Introduction
+## Giới Thiệu
 
 Trong bước này, chúng ta sẽ thiết lập DynamoDB, API Gateway, Cognito, và Lambda functions.  
 Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
 
 ## Các Bước Thực Hiện
 
-1. **Lấy Mã Nguồn Backend**  
+1. **Tải mã nguồn Backend**  
    Source: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
 
-2. **Cài Đặt Serverless Framework và dependencies**
+2. **Cài đặt Serverless Framework**
 
    Bạn đã cài đặt ở bước 2.2. Không cần thực hiện lại.
 
-3. **Cấu Trúc Thư Mục Dự Án**
+3. **Cấu trúc thư mục dự án**
 
    Trong phần này, chúng tôi sẽ mô tả cấu trúc của thư mục dự án và giải thích mục đích của từng thư mục và tệp.
 
@@ -42,7 +42,7 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
 
    ***
 
-4. **Project Config**
+4. **Cấu hình chung của dự án**
 
    ```yaml
    service: fcj-ws-api # Service name
@@ -94,7 +94,7 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
         TODO_TABLE: ${self:custom.dynamo.TodoTable}
    ```
 
-5. **Cấu Hình lambda role**
+5. **Cấu hình quyền cho lambda**
 
    Trong phần này, chúng ta định nghĩa IAM roles cho các hàm Lambda. Vai trò này cấp quyền cần thiết cho các hàm Lambda để tương tác với các dịch vụ AWS như DynamoDB.
 
@@ -159,7 +159,7 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
            BillingMode: PAY_PER_REQUEST # Define billing mode (on demand)
    ```
 
-7. **Cognito Configuration**
+7. **Cấu hình Cognito**
 
    Trong phần này, chúng tôi sẽ cấu hình Amazon Cognito User Pool và User Pool Client, sẽ xử lý xác thực và quản lý người dùng trong ứng dụng. Cognito giúp quản lý đăng ký người dùng, đăng nhập và kiểm soát truy cập.
 
@@ -263,7 +263,7 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
            Fn::Sub: "https://${CognitoUserPoolDomain}.auth.${AWS::Region}.amazoncognito.com/login?client_id=${CognitoUserPoolClient}&response_type=token&scope=email+openid&redirect_uri=https://${cf:fcj-ws-fe-${self:provider.stage}.CloudFrontDomain}/callback"
    ```
 
-8. **API Configuration**
+8. **Cấu hình API**
 
    Trong phần này, chúng ta sẽ giải thích chi tiết cấu hình của một hàm Lambda cụ thể, bao gồm handler, tên hàm, IAM role, và các sự kiện kích hoạt.
 
@@ -349,7 +349,7 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
      - ${file(./resources/cognito.yml):resources}
    ```
 
-10. **Deploy**
+10. **Triển khai**
     Hãy nhớ thêm tệp .env chứa `AWS_ACCESS_KEY_ID` và `AWS_SECRET_ACCESS_KEY` mà chúng ta đã tạo ở bước trước vào thư mục gốc của dự án.
 
     Triển khai các tài nguyên đã được định nghĩa trong tệp `serverless.yml` của bạn bằng cách sử dụng Serverless CLI:
@@ -357,3 +357,4 @@ Repository: [fcj-ws-api](https://github.com/dinhhung1598753/fcj-ws-api)
     ```bash
     serverless deploy
     ```
+ 

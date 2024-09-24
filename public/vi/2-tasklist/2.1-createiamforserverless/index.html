@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Chuẩn Bị Người dùng IAM cho Serverless :: AWS System Manager</title>
+    <title>Chuẩn Bị IAM user cho Serverless :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1725603443" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1725603443" rel="stylesheet">
-    <link href="/css/hybrid.css?1725603443" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1725603443" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1725603443" rel="stylesheet">
-    <link href="/css/auto-complete.css?1725603443" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1725603443" rel="stylesheet">
-    <link href="/css/theme.css?1725603443" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1725603443" rel="stylesheet">
+    <link href="/css/nucleus.css?1726813204" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1726813204" rel="stylesheet">
+    <link href="/css/hybrid.css?1726813204" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1726813204" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1726813204" rel="stylesheet">
+    <link href="/css/auto-complete.css?1726813204" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1726813204" rel="stylesheet">
+    <link href="/css/theme.css?1726813204" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1726813204" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1725603443" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1726813204" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1725603443"></script>
+    <script src="/js/jquery-3.3.1.min.js?1726813204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1725603443"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1725603443"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1726813204"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1726813204"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1725603443"></script>
+<script type="text/javascript" src="/js/search.js?1726813204"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị Người dùng IAM cho Serverless" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị IAM user cho Serverless" class="dd-item 
         
         active
         
         ">
       <a href="/vi/2-tasklist/2.1-createiamforserverless/">
-           <b> 2.1 </b> Chuẩn Bị Người dùng IAM cho Serverless
+           <b> 2.1 </b> Chuẩn Bị IAM user cho Serverless
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Create resource and lambda functions for backend" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Tạo tài nguyên cho backend " class="dd-item 
         
         
         
         ">
       <a href="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/">
-           <b> 2.3 </b> Create resource and lambda functions for backend
+           <b> 2.3 </b> Tạo tài nguyên cho backend 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -443,7 +443,7 @@
             
           
           
-            <a href='/vi/'>Xây Dựng Ứng Dụng Serverless</a> > <a href='/vi/2-tasklist/'>Danh sách công việc</a> > Chuẩn Bị Người dùng IAM cho Serverless
+            <a href='/vi/'>Xây Dựng Ứng Dụng Serverless</a> > <a href='/vi/2-tasklist/'>Danh sách công việc</a> > Chuẩn Bị IAM user cho Serverless
           
         
           
@@ -476,7 +476,7 @@
           
             <h1>
               
-              Chuẩn Bị Người dùng IAM cho Serverless
+              Chuẩn Bị IAM user cho Serverless
             </h1>
           
 
@@ -484,8 +484,7 @@
 
 
 
-	<h1 id="chuẩn-bị-iam-user-cho-serverless">Chuẩn Bị IAM user cho Serverless</h1>
-<p>Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret access key để Serverless Framework có thể tương tác với các tài nguyên AWS.</p>
+	<p>Trong bước này, chúng ta sẽ tạo một IAM user và tạo secret access key để Serverless Framework có thể tương tác với các tài nguyên AWS.</p>
 <h2 id="các-bước-thực-hiện">Các bước thực hiện:</h2>
 <ol>
 <li>
@@ -509,10 +508,10 @@ Từ menu bên trái, chọn <strong>Users</strong>. Tại đây, bạn sẽ qu�
 </ul>
 </li>
 <li>
-<p><strong>Attach Policies Directly</strong></p>
+<p><strong>Cấp quyền cho User</strong></p>
 <ul>
 <li>Trong phần &ldquo;Set permissions&rdquo;, chọn <strong>Attach Policies Directly</strong>.</li>
-<li>Để kiểm soát chi tiết hơn, chúng ta sẽ tạo một chính sách tùy chỉnh trong bước tiếp theo.</li>
+<li>Để kiểm soát chi tiết hơn, chúng ta sẽ tạo một chính sách tùy chỉnh (Custom policy) trong bước tiếp theo.</li>
 </ul>
 </li>
 <li>
@@ -522,13 +521,13 @@ Từ menu bên trái, chọn <strong>Users</strong>. Tại đây, bạn sẽ qu�
 </ul>
 </li>
 <li>
-<p><strong>Chọn JSON trong Trình chỉnh sửa Policy</strong></p>
+<p><strong>Chọn JSON trong trình chỉnh sửa Policy</strong></p>
 <ul>
 <li>Trong trình hướng dẫn tạo chính sách, chuyển sang tab <strong>JSON</strong> trong trình chỉnh sửa chính sách.</li>
 </ul>
 </li>
 <li>
-<p><strong>Thêm Policy Permissions</strong><br>
+<p><strong>Thêm quyền cho chính sách tuỳ chỉnh</strong><br>
 Sao chép và dán đoạn JSON sau vào trình chỉnh sửa, điều này cấp quyền cần thiết để quản lý các tài nguyên. Bạn có thể tùy chỉnh chính sách này dựa trên các dịch vụ bạn sẽ sử dụng.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
@@ -556,7 +555,7 @@ Sao chép và dán đoạn JSON sau vào trình chỉnh sửa, điều này cấ
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Xem lại và Tạo Policy</strong></p>
+<p><strong>Xem lại và Tạo chính sách</strong></p>
 <ul>
 <li>Nhấp vào <strong>Next: Review</strong>.</li>
 <li>Cung cấp một <strong>Tên</strong> cho chính sách của bạn (ví dụ: <code>ServerlessDeploymentPolicy</code>) và xem lại các quyền.</li>
@@ -564,23 +563,23 @@ Sao chép và dán đoạn JSON sau vào trình chỉnh sửa, điều này cấ
 </ul>
 </li>
 <li>
-<p><strong>Attach the New Policy</strong></p>
+<p><strong>Gán chính sách</strong></p>
 </li>
 </ol>
 <ul>
 <li>Sau khi tạo chính sách, quay lại màn hình tạo người dùng.</li>
 <li>Trong phần &ldquo;Attach the New Policy&rdquo;, tìm kiếm chính sách mà bạn vừa tạo (ví dụ: <code>ServerlessDeploymentPolicy</code>).</li>
-<li>Chọn chính sách từ danh sách và nhấp vào <strong>Nexto</strong>.</li>
+<li>Chọn chính sách từ danh sách và nhấp vào <strong>Next</strong>.</li>
 </ul>
 <ol start="11">
-<li><strong>Hoàn Tất Tạo User</strong></li>
+<li><strong>Hoàn tất tạo User</strong></li>
 </ol>
 <ul>
 <li>Xem lại các chi tiết và quyền đã gán cho IAM user.</li>
 <li>Nhấp vào <strong>Create User</strong> để hoàn tất việc tạo người dùng.</li>
 </ul>
 <ol start="12">
-<li><strong>Tải Về Các Khóa Truy Cập</strong></li>
+<li><strong>Tải về các Khóa Truy Cập</strong></li>
 </ol>
 <ul>
 <li>
@@ -595,21 +594,21 @@ Trong bảng điều khiển IAM, nhấp vào người dùng bạn vừa tạo t
 Đi đến tab <strong>Thông tin bảo mật</strong>.</p>
 </li>
 <li>
-<p><strong>Tạo Khóa Truy Cập</strong></p>
+<p><strong>Tạo khóa truy cập</strong></p>
 <ul>
-<li>Cuộn xuống phần <strong>Access keysp</strong>.</li>
+<li>Cuộn xuống phần <strong>Access key</strong>.</li>
 <li>Nhấp vào nút <strong>Create access key</strong>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Chọn Application Type</strong></p>
 <ul>
-<li>Trong wizard &ldquo;Tạo khóa truy cập&rdquo;, chọn <strong>Application running outside AWS</strong>.</li>
+<li>Trong &ldquo;Create access key&rdquo;, chọn <strong>Application running outside AWS</strong>.</li>
 <li>Nhấp vào <strong>Next</strong> để tiếp tục.</li>
 </ul>
 </li>
 <li>
-<p><strong>Tải Về Access Key</strong></p>
+<p><strong>Tải về khóa truy cập</strong></p>
 <ul>
 <li>Khi khóa truy cập được tạo, bạn sẽ thấy <strong>Access key ID</strong> và <strong>Secret access key</strong>.</li>
 <li><strong>Download</strong> thông tin đăng nhập bằng cách nhấp vào nút <strong>Download .csv</strong>, hoặc sao chép thủ công <strong>Access key ID</strong> và <strong>Secret access key</strong>.</li>
@@ -623,28 +622,28 @@ Trong bảng điều khiển IAM, nhấp vào người dùng bạn vừa tạo t
 </li>
 </ul>
 <ol start="13">
-<li><strong>Cấu Hình Serverless Framework với Thông Tin Đăng Nhập IAM</strong></li>
+<li><strong>Cấu hình Serverless Framework với thông tin đăng nhập IAM</strong></li>
 </ol>
 <ul>
 <li>
 <p>Với phiên bản Serverless Framework 4, bạn không cần cấu hình thông tin đăng nhập qua dòng lệnh nữa. Thay vào đó, bạn có thể thêm chúng trực tiếp vào tệp <code>.env</code> của dự án:</p>
 <ol>
 <li>
-<p><strong>Mở Thư Mục Dự Án của Bạn</strong><br>
+<p><strong>Mở thư mục dự án của bạn</strong><br>
 Điều hướng đến thư mục gốc của dự án Serverless của bạn.</p>
 </li>
 <li>
-<p><strong>Tạo hoặc Chỉnh Sửa Tệp <code>.env</code></strong><br>
+<p><strong>Tạo hoặc chỉnh sửa tệp <code>.env</code></strong><br>
 Nếu bạn chưa có tệp <code>.env</code>, hãy tạo một tệp mới trong thư mục gốc của dự án. Nếu tệp đã tồn tại, mở nó để chỉnh sửa.</p>
 </li>
 <li>
-<p><strong>Thêm Thông Tin Đăng Nhập của Bạn</strong><br>
+<p><strong>Thêm thông tin dăng nhập của bạn</strong><br>
 Thêm các dòng sau vào tệp <code>.env</code>, thay thế <code>&lt;Your_Access_Key_ID&gt;</code> và <code>&lt;Your_Secret_Access_Key&gt;</code> bằng giá trị thực tế:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>AWS_ACCESS_KEY_ID=&lt;Your_Access_Key_ID&gt;
 </span></span><span style="display:flex;"><span>AWS_SECRET_ACCESS_KEY=&lt;Your_Secret_Access_Key&gt;
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Lưu Tệp <code>.env</code></strong><br>
+<p><strong>Lưu tệp <code>.env</code></strong><br>
 Đảm bảo rằng tệp được lưu với thông tin đăng nhập chính xác.</p>
 </li>
 </ol>
@@ -848,19 +847,19 @@ Thêm các dòng sau vào tệp <code>.env</code>, thay thế <code>&lt;Your_Acc
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1725603443"></script>
-    <script src="/js/jquery.sticky.js?1725603443"></script>
-    <script src="/js/featherlight.min.js?1725603443"></script>
-    <script src="/js/highlight.pack.js?1725603443"></script>
+    <script src="/js/clipboard.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1726813204"></script>
+    <script src="/js/jquery.sticky.js?1726813204"></script>
+    <script src="/js/featherlight.min.js?1726813204"></script>
+    <script src="/js/highlight.pack.js?1726813204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1725603443"></script>
-    <script src="/js/learn.js?1725603443"></script>
-    <script src="/js/hugo-learn.js?1725603443"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1726813204"></script>
+    <script src="/js/learn.js?1726813204"></script>
+    <script src="/js/hugo-learn.js?1726813204"></script>
 
-    <link href="/mermaid/mermaid.css?1725603443" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1725603443"></script>
+    <link href="/mermaid/mermaid.css?1726813204" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1726813204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

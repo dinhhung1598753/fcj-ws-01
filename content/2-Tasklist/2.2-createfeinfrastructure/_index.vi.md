@@ -8,14 +8,14 @@ pre: " <b> 2.2 </b> "
 
 ## Giới Thiệu
 
-Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu trữ một website tĩnh và cấu hình một phân phối CloudFront để phục vụ nội dung qua CDN.
+Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu trữ một website tĩnh và cấu hình CloudFront để phục vụ nội dung qua CDN.
 
 ## Các Bước Thực Hiện
 
-1. **Kéo Mã Nguồn Frontend**  
+1. **Tải mã nguồn Frontend**  
    Nguồn: [fcj-ws-fe](https://github.com/dinhhung1598753/fcj-ws-fe)
 
-2. **Cài Đặt Serverless Framework và Các Phụ Thuộc**
+2. **Cài đặt Serverless Framework**
 
    ```bash
    npm i -g serverless@4.2.5
@@ -36,7 +36,7 @@ Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu tr�
        stage: dev
      ```
 
-   - **Tạo S3 Bucket và Configuration**
+   - **Tạo S3 Bucket và cấu hình cho nó**
 
      Thêm cấu hình sau vào tệp `serverless.yml` của bạn để tạo một S3 bucket và cấu hình nó cho việc lưu trữ website tĩnh:
 
@@ -57,7 +57,7 @@ Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu tr�
            RestrictPublicBuckets: false
      ```
 
-   - **Đặt Chính Sách S3 Bucket Để Cho Phép Truy Cập Đọc Công Khai**
+   - **Cập nhật Chính Sách S3 Bucket Để Cho Phép Truy Cập Đọc Công Khai**
 
      Thêm cấu hình sau để cho phép truy cập đọc công khai vào S3 bucket:
 
@@ -120,7 +120,7 @@ Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu tr�
            Comment: "CloudFront distribution for serving S3 static website"
      ```
 
-   - **Tất Cả Cấu Hình Trong serverless.yml**
+   - **Tất cả cấu hình trong serverless.yml**
 
      ```yaml
      service: fcj-ws-fe
@@ -201,7 +201,7 @@ Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu tr�
              Fn::GetAtt: [CloudFrontDistribution, DomainName] # Get the domain name of the CloudFront distribution
      ```
 
-4. **Triển Khai Hạ Tầng**
+4. **Triển khai**
 
    Nhớ thêm tệp `.env` chứa `AWS_ACCESS_KEY_ID` và `AWS_SECRET_ACCESS_KEY` mà chúng ta đã tạo trong bước trước vào thư mục gốc của dự án.
 

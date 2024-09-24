@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create resource and lambda functions for backend :: AWS System Manager</title>
+    <title>Tạo tài nguyên cho backend  :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1725603443" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1725603443" rel="stylesheet">
-    <link href="/css/hybrid.css?1725603443" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1725603443" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1725603443" rel="stylesheet">
-    <link href="/css/auto-complete.css?1725603443" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1725603443" rel="stylesheet">
-    <link href="/css/theme.css?1725603443" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1725603443" rel="stylesheet">
+    <link href="/css/nucleus.css?1726813204" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1726813204" rel="stylesheet">
+    <link href="/css/hybrid.css?1726813204" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1726813204" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1726813204" rel="stylesheet">
+    <link href="/css/auto-complete.css?1726813204" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1726813204" rel="stylesheet">
+    <link href="/css/theme.css?1726813204" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1726813204" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1725603443" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1726813204" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1725603443"></script>
+    <script src="/js/jquery-3.3.1.min.js?1726813204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1725603443"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1725603443"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1726813204"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1726813204"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1725603443"></script>
+<script type="text/javascript" src="/js/search.js?1726813204"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị Người dùng IAM cho Serverless" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị IAM user cho Serverless" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-tasklist/2.1-createiamforserverless/">
-           <b> 2.1 </b> Chuẩn Bị Người dùng IAM cho Serverless
+           <b> 2.1 </b> Chuẩn Bị IAM user cho Serverless
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Create resource and lambda functions for backend" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Tạo tài nguyên cho backend " class="dd-item 
         
         active
         
         ">
       <a href="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/">
-           <b> 2.3 </b> Create resource and lambda functions for backend
+           <b> 2.3 </b> Tạo tài nguyên cho backend 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -443,7 +443,7 @@
             
           
           
-            <a href='/vi/'>Xây Dựng Ứng Dụng Serverless</a> > <a href='/vi/2-tasklist/'>Danh sách công việc</a> > Create resource and lambda functions for backend
+            <a href='/vi/'>Xây Dựng Ứng Dụng Serverless</a> > <a href='/vi/2-tasklist/'>Danh sách công việc</a> > Tạo tài nguyên cho backend 
           
         
           
@@ -458,7 +458,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#giới-thiệu">Giới Thiệu</a></li>
     <li><a href="#các-bước-thực-hiện">Các Bước Thực Hiện</a></li>
   </ul>
 </nav>
@@ -477,7 +477,7 @@
           
             <h1>
               
-              Create resource and lambda functions for backend
+              Tạo tài nguyên cho backend 
             </h1>
           
 
@@ -485,21 +485,21 @@
 
 
 
-	<h2 id="introduction">Introduction</h2>
+	<h2 id="giới-thiệu">Giới Thiệu</h2>
 <p>Trong bước này, chúng ta sẽ thiết lập DynamoDB, API Gateway, Cognito, và Lambda functions.<br>
 Repository: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></p>
 <h2 id="các-bước-thực-hiện">Các Bước Thực Hiện</h2>
 <ol>
 <li>
-<p><strong>Lấy Mã Nguồn Backend</strong><br>
+<p><strong>Tải mã nguồn Backend</strong><br>
 Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></p>
 </li>
 <li>
-<p><strong>Cài Đặt Serverless Framework và dependencies</strong></p>
+<p><strong>Cài đặt Serverless Framework</strong></p>
 <p>Bạn đã cài đặt ở bước 2.2. Không cần thực hiện lại.</p>
 </li>
 <li>
-<p><strong>Cấu Trúc Thư Mục Dự Án</strong></p>
+<p><strong>Cấu trúc thư mục dự án</strong></p>
 <p>Trong phần này, chúng tôi sẽ mô tả cấu trúc của thư mục dự án và giải thích mục đích của từng thư mục và tệp.</p>
 <p>Thư mục dự án <code>fcj-ws-api</code> được tổ chức như sau:</p>
 <ul>
@@ -529,7 +529,7 @@ Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></
 <hr>
 </li>
 <li>
-<p><strong>Project Config</strong></p>
+<p><strong>Cấu hình chung của dự án</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">fcj-ws-api</span> <span style="color:#75715e"># Service name</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span> <span style="color:#f92672">custom</span>:
@@ -579,7 +579,7 @@ Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">TODO_TABLE</span>: <span style="color:#ae81ff">${self:custom.dynamo.TodoTable}</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Cấu Hình lambda role</strong></p>
+<p><strong>Cấu hình quyền cho lambda</strong></p>
 <p>Trong phần này, chúng ta định nghĩa IAM roles cho các hàm Lambda. Vai trò này cấp quyền cần thiết cho các hàm Lambda để tương tác với các dịch vụ AWS như DynamoDB.</p>
 <p>Dưới đây là định nghĩa tài nguyên cho <code>LambdaRole</code> trong <code> resources:</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">resources</span>:
@@ -636,7 +636,7 @@ Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">BillingMode</span>: <span style="color:#ae81ff">PAY_PER_REQUEST</span> <span style="color:#75715e"># Define billing mode (on demand)</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Cognito Configuration</strong></p>
+<p><strong>Cấu hình Cognito</strong></p>
 <p>Trong phần này, chúng tôi sẽ cấu hình Amazon Cognito User Pool và User Pool Client, sẽ xử lý xác thực và quản lý người dùng trong ứng dụng. Cognito giúp quản lý đăng ký người dùng, đăng nhập và kiểm soát truy cập.</p>
 <p>Dưới đây là cấu hình cho Cognito:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span> <span style="color:#f92672">resources</span>:
@@ -736,7 +736,7 @@ Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">Fn::Sub</span>: <span style="color:#e6db74">&#34;https://${CognitoUserPoolDomain}.auth.${AWS::Region}.amazoncognito.com/login?client_id=${CognitoUserPoolClient}&amp;response_type=token&amp;scope=email+openid&amp;redirect_uri=https://${cf:fcj-ws-fe-${self:provider.stage}.CloudFrontDomain}/callback&#34;</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>API Configuration</strong></p>
+<p><strong>Cấu hình API</strong></p>
 <p>Trong phần này, chúng ta sẽ giải thích chi tiết cấu hình của một hàm Lambda cụ thể, bao gồm handler, tên hàm, IAM role, và các sự kiện kích hoạt.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Code for this lambda function</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">handler</span>: <span style="color:#ae81ff">src/createTodo/handler.createTodo</span>
@@ -816,7 +816,7 @@ Source: <a href="https://github.com/dinhhung1598753/fcj-ws-api">fcj-ws-api</a></
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">${file(./resources/cognito.yml):resources}</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Deploy</strong>
+<p><strong>Triển khai</strong>
 Hãy nhớ thêm tệp .env chứa <code>AWS_ACCESS_KEY_ID</code> và <code>AWS_SECRET_ACCESS_KEY</code> mà chúng ta đã tạo ở bước trước vào thư mục gốc của dự án.</p>
 <p>Triển khai các tài nguyên đã được định nghĩa trong tệp <code>serverless.yml</code> của bạn bằng cách sử dụng Serverless CLI:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>serverless deploy
@@ -1020,19 +1020,19 @@ Hãy nhớ thêm tệp .env chứa <code>AWS_ACCESS_KEY_ID</code> và <code>AWS_
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1725603443"></script>
-    <script src="/js/jquery.sticky.js?1725603443"></script>
-    <script src="/js/featherlight.min.js?1725603443"></script>
-    <script src="/js/highlight.pack.js?1725603443"></script>
+    <script src="/js/clipboard.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1726813204"></script>
+    <script src="/js/jquery.sticky.js?1726813204"></script>
+    <script src="/js/featherlight.min.js?1726813204"></script>
+    <script src="/js/highlight.pack.js?1726813204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1725603443"></script>
-    <script src="/js/learn.js?1725603443"></script>
-    <script src="/js/hugo-learn.js?1725603443"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1726813204"></script>
+    <script src="/js/learn.js?1726813204"></script>
+    <script src="/js/hugo-learn.js?1726813204"></script>
 
-    <link href="/mermaid/mermaid.css?1725603443" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1725603443"></script>
+    <link href="/mermaid/mermaid.css?1726813204" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1726813204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

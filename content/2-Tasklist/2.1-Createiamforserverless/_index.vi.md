@@ -1,14 +1,13 @@
 ---
-title: "Chuẩn Bị Người dùng IAM cho Serverless"
+title: "Chuẩn Bị IAM user cho Serverless"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: " <b> 2.1 </b> "
 ---
 
-# Chuẩn Bị IAM user cho Serverless
 
-Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret access key để Serverless Framework có thể tương tác với các tài nguyên AWS.
+Trong bước này, chúng ta sẽ tạo một IAM user và tạo secret access key để Serverless Framework có thể tương tác với các tài nguyên AWS.
 
 ## Các bước thực hiện:
 
@@ -27,20 +26,20 @@ Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret ac
    - Nhập **User name** (ví dụ: `serverless-deployer`).
    - Chọn **Access type** là "Programmatic access" để tạo **Access key** và **Secret access key** mà Serverless Framework sẽ sử dụng.
 
-5. **Attach Policies Directly**
+5. **Cấp quyền cho User**
 
    - Trong phần "Set permissions", chọn **Attach Policies Directly**.
-   - Để kiểm soát chi tiết hơn, chúng ta sẽ tạo một chính sách tùy chỉnh trong bước tiếp theo.
+   - Để kiểm soát chi tiết hơn, chúng ta sẽ tạo một chính sách tùy chỉnh (Custom policy) trong bước tiếp theo.
 
 6. **Tạo Chính sách**
 
    - Trong phần "Attach policies", nhấp vào **Create policy**.
 
-7. **Chọn JSON trong Trình chỉnh sửa Policy**
+7. **Chọn JSON trong trình chỉnh sửa Policy**
 
    - Trong trình hướng dẫn tạo chính sách, chuyển sang tab **JSON** trong trình chỉnh sửa chính sách.
 
-8. **Thêm Policy Permissions**  
+8. **Thêm quyền cho chính sách tuỳ chỉnh**  
     Sao chép và dán đoạn JSON sau vào trình chỉnh sửa, điều này cấp quyền cần thiết để quản lý các tài nguyên. Bạn có thể tùy chỉnh chính sách này dựa trên các dịch vụ bạn sẽ sử dụng.
 
    ```json
@@ -70,24 +69,24 @@ Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret ac
    }
    ```
 
-9. **Xem lại và Tạo Policy**
+9. **Xem lại và Tạo chính sách**
 
    - Nhấp vào **Next: Review**.
    - Cung cấp một **Tên** cho chính sách của bạn (ví dụ: `ServerlessDeploymentPolicy`) và xem lại các quyền.
    - Nhấp vào **Create policy** để hoàn tất.
 
-10. **Attach the New Policy**
+10. **Gán chính sách**
 
 - Sau khi tạo chính sách, quay lại màn hình tạo người dùng.
 - Trong phần "Attach the New Policy", tìm kiếm chính sách mà bạn vừa tạo (ví dụ: `ServerlessDeploymentPolicy`).
-- Chọn chính sách từ danh sách và nhấp vào **Nexto**.
+- Chọn chính sách từ danh sách và nhấp vào **Next**.
 
-11. **Hoàn Tất Tạo User**
+11. **Hoàn tất tạo User**
 
 - Xem lại các chi tiết và quyền đã gán cho IAM user.
 - Nhấp vào **Create User** để hoàn tất việc tạo người dùng.
 
-12. **Tải Về Các Khóa Truy Cập**
+12. **Tải về các Khóa Truy Cập**
 
 - Sau khi tạo thành công người dùng IAM, bạn cần tạo và tải về các khóa truy cập:
 
@@ -97,17 +96,17 @@ Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret ac
   2.  **Chuyển đến Tab Security Credentials**  
       Đi đến tab **Thông tin bảo mật**.
 
-  3.  **Tạo Khóa Truy Cập**
+  3.  **Tạo khóa truy cập**
 
-      - Cuộn xuống phần **Access keysp**.
+      - Cuộn xuống phần **Access key**.
       - Nhấp vào nút **Create access key**.
 
   4.  **Chọn Application Type**
 
-      - Trong wizard "Tạo khóa truy cập", chọn **Application running outside AWS**.
+      - Trong "Create access key", chọn **Application running outside AWS**.
       - Nhấp vào **Next** để tiếp tục.
 
-  5.  **Tải Về Access Key**
+  5.  **Tải về khóa truy cập**
 
       - Khi khóa truy cập được tạo, bạn sẽ thấy **Access key ID** và **Secret access key**.
       - **Download** thông tin đăng nhập bằng cách nhấp vào nút **Download .csv**, hoặc sao chép thủ công **Access key ID** và **Secret access key**.
@@ -116,17 +115,17 @@ Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret ac
 
 - Bạn sẽ sử dụng các thông tin đăng nhập này trong các bước tiếp theo để cấu hình Serverless Framework.
 
-13. **Cấu Hình Serverless Framework với Thông Tin Đăng Nhập IAM**
+13. **Cấu hình Serverless Framework với thông tin đăng nhập IAM**
 
 - Với phiên bản Serverless Framework 4, bạn không cần cấu hình thông tin đăng nhập qua dòng lệnh nữa. Thay vào đó, bạn có thể thêm chúng trực tiếp vào tệp `.env` của dự án:
 
-  1.  **Mở Thư Mục Dự Án của Bạn**  
+  1.  **Mở thư mục dự án của bạn**  
       Điều hướng đến thư mục gốc của dự án Serverless của bạn.
 
-  2.  **Tạo hoặc Chỉnh Sửa Tệp `.env`**  
+  2.  **Tạo hoặc chỉnh sửa tệp `.env`**  
       Nếu bạn chưa có tệp `.env`, hãy tạo một tệp mới trong thư mục gốc của dự án. Nếu tệp đã tồn tại, mở nó để chỉnh sửa.
 
-  3.  **Thêm Thông Tin Đăng Nhập của Bạn**  
+  3.  **Thêm thông tin dăng nhập của bạn**  
       Thêm các dòng sau vào tệp `.env`, thay thế `<Your_Access_Key_ID>` và `<Your_Secret_Access_Key>` bằng giá trị thực tế:
 
       ```plaintext
@@ -134,7 +133,7 @@ Trong bước này, chúng ta sẽ tạo một IAM user và tạo các secret ac
       AWS_SECRET_ACCESS_KEY=<Your_Secret_Access_Key>
       ```
 
-  4.  **Lưu Tệp `.env`**  
+  4.  **Lưu tệp `.env`**  
       Đảm bảo rằng tệp được lưu với thông tin đăng nhập chính xác.
 
 - Serverless Framework sẽ tự động sử dụng các thông tin đăng nhập này cho việc triển khai và các hoạt động khác.

@@ -12,21 +12,21 @@
     <title>Tạo Website Tĩnh S3 và CloudFront :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1725603443" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1725603443" rel="stylesheet">
-    <link href="/css/hybrid.css?1725603443" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1725603443" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1725603443" rel="stylesheet">
-    <link href="/css/auto-complete.css?1725603443" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1725603443" rel="stylesheet">
-    <link href="/css/theme.css?1725603443" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1725603443" rel="stylesheet">
+    <link href="/css/nucleus.css?1726813204" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1726813204" rel="stylesheet">
+    <link href="/css/hybrid.css?1726813204" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1726813204" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1726813204" rel="stylesheet">
+    <link href="/css/auto-complete.css?1726813204" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1726813204" rel="stylesheet">
+    <link href="/css/theme.css?1726813204" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1726813204" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1725603443" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1726813204" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1725603443"></script>
+    <script src="/js/jquery-3.3.1.min.js?1726813204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1725603443"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1725603443"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1726813204"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1726813204"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1725603443"></script>
+<script type="text/javascript" src="/js/search.js?1726813204"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị Người dùng IAM cho Serverless" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị IAM user cho Serverless" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-tasklist/2.1-createiamforserverless/">
-           <b> 2.1 </b> Chuẩn Bị Người dùng IAM cho Serverless
+           <b> 2.1 </b> Chuẩn Bị IAM user cho Serverless
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Create resource and lambda functions for backend" class="dd-item 
+    <li data-nav-id="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Tạo tài nguyên cho backend " class="dd-item 
         
         
         
         ">
       <a href="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/">
-           <b> 2.3 </b> Create resource and lambda functions for backend
+           <b> 2.3 </b> Tạo tài nguyên cho backend 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -486,15 +486,15 @@
 
 
 	<h2 id="giới-thiệu">Giới Thiệu</h2>
-<p>Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu trữ một website tĩnh và cấu hình một phân phối CloudFront để phục vụ nội dung qua CDN.</p>
+<p>Trong bước này, chúng ta sẽ thiết lập một bucket S3 để lưu trữ một website tĩnh và cấu hình CloudFront để phục vụ nội dung qua CDN.</p>
 <h2 id="các-bước-thực-hiện">Các Bước Thực Hiện</h2>
 <ol>
 <li>
-<p><strong>Kéo Mã Nguồn Frontend</strong><br>
+<p><strong>Tải mã nguồn Frontend</strong><br>
 Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p>
 </li>
 <li>
-<p><strong>Cài Đặt Serverless Framework và Các Phụ Thuộc</strong></p>
+<p><strong>Cài đặt Serverless Framework</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i -g serverless@4.2.5
 </span></span></code></pre></div></li>
 <li>
@@ -511,7 +511,7 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">stage</span>: <span style="color:#ae81ff">dev</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Tạo S3 Bucket và Configuration</strong></p>
+<p><strong>Tạo S3 Bucket và cấu hình cho nó</strong></p>
 <p>Thêm cấu hình sau vào tệp <code>serverless.yml</code> của bạn để tạo một S3 bucket và cấu hình nó cho việc lưu trữ website tĩnh:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Define the S3 bucket  resource</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">S3Bucket</span>:
@@ -529,7 +529,7 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">RestrictPublicBuckets</span>: <span style="color:#66d9ef">false</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Đặt Chính Sách S3 Bucket Để Cho Phép Truy Cập Đọc Công Khai</strong></p>
+<p><strong>Cập nhật Chính Sách S3 Bucket Để Cho Phép Truy Cập Đọc Công Khai</strong></p>
 <p>Thêm cấu hình sau để cho phép truy cập đọc công khai vào S3 bucket:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Set the bucket policy to allow public read access</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">S3BucketPolicy</span>:
@@ -586,7 +586,7 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">Comment</span>: <span style="color:#e6db74">&#34;CloudFront distribution for serving S3 static website&#34;</span>
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Tất Cả Cấu Hình Trong serverless.yml</strong></p>
+<p><strong>Tất cả cấu hình trong serverless.yml</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">fcj-ws-fe</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">provider</span>:
@@ -667,7 +667,7 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
 </ul>
 </li>
 <li>
-<p><strong>Triển Khai Hạ Tầng</strong></p>
+<p><strong>Triển khai</strong></p>
 <p>Nhớ thêm tệp <code>.env</code> chứa <code>AWS_ACCESS_KEY_ID</code> và <code>AWS_SECRET_ACCESS_KEY</code> mà chúng ta đã tạo trong bước trước vào thư mục gốc của dự án.</p>
 <p>Triển khai các tài nguyên được định nghĩa trong tệp <code>serverless.yml</code> bằng cách sử dụng CLI của Serverless:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>serverless deploy
@@ -858,10 +858,10 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị Người dùng IAM cho Serverless"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-tasklist/2.1-createiamforserverless/" title="Chuẩn Bị IAM user cho Serverless"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Create resource and lambda functions for backend" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/2-tasklist/2.3-createlambdaandinfrastructureforbackend/" title="Tạo tài nguyên cho backend " style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -871,19 +871,19 @@ Nguồn: <a href="https://github.com/dinhhung1598753/fcj-ws-fe">fcj-ws-fe</a></p
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.min.js?1725603443"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1725603443"></script>
-    <script src="/js/jquery.sticky.js?1725603443"></script>
-    <script src="/js/featherlight.min.js?1725603443"></script>
-    <script src="/js/highlight.pack.js?1725603443"></script>
+    <script src="/js/clipboard.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.min.js?1726813204"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1726813204"></script>
+    <script src="/js/jquery.sticky.js?1726813204"></script>
+    <script src="/js/featherlight.min.js?1726813204"></script>
+    <script src="/js/highlight.pack.js?1726813204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1725603443"></script>
-    <script src="/js/learn.js?1725603443"></script>
-    <script src="/js/hugo-learn.js?1725603443"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1726813204"></script>
+    <script src="/js/learn.js?1726813204"></script>
+    <script src="/js/hugo-learn.js?1726813204"></script>
 
-    <link href="/mermaid/mermaid.css?1725603443" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1725603443"></script>
+    <link href="/mermaid/mermaid.css?1726813204" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1726813204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

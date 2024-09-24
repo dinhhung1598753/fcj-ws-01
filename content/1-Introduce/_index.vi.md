@@ -10,7 +10,7 @@ pre: " <b> 1. </b> "
 
 Sau workshop này, bạn sẽ có khả năng:
 
-- Tạo hạ tầng sử dụng Serverless Framework
+- Tạo tài nguyên sử dụng Serverless Framework
 - Triển khai các hàm Lambda
 - Tạo một pipeline CI/CD sử dụng CodePipeline, CodeBuild, và CodeDeploy
 
